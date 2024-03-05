@@ -44,13 +44,7 @@
       <artifactId>log4j-slf4j-impl</artifactId>
       <version>2.10.0</version>
     </dependency>
-    <dependency>
-        <groupId>unibas</groupId>
-        <artifactId>utilita</artifactId>
-        <version>0.1</version>
-        <scope>system</scope>
-        <systemPath>/home/vincenzo/MEGA/Programmazione/myLib/java/utilita.jar</systemPath>
-    </dependency>
+    
 
   </dependencies>
   <properties>
