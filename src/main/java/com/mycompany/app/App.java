@@ -51,38 +51,25 @@ public class App
         get("/", (req, res) -> "Hello, World");
 
         post("/compute", (req, res) -> {
-            System.out.println(req.queryParams("input1"));
-            System.out.println(req.queryParams("input2"));
+          //System.out.println(req.queryParams("input1"));
+          //System.out.println(req.queryParams("input2"));
 
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
-          //sc1.useDelimiter("[;\r\n]+");
+          sc1.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
-          String line = sc1.nextLine();
-          Scanner lineScan = new Scanner(line);
-          while (lineScan.hasNext())
+          while (sc1.hasNext())
           {
-            int value = Integer.parseInt(lineScan.next().replaceAll("\\s",""));
+            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
             inputList.add(value);
           }
-          line = sc1.nextLine();
-          lineScan = new Scanner(line);
-          int[] input2Arr = new int[line.length];
-          while (lineScan.hasNext())
-          {
-            int value = Integer.parseInt(lineScan.next().replaceAll("\\s",""));
-            input2Arr[a] = value;
-          }
-          line = sc1.nextLine();
-          lineScan = new Scanner(line);
-          int input3 = Integer.parseInt(lineScan.replaceAll("\\s",""));
           System.out.println(inputList);
 
 
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.meaningfulOperation(inputList, input2AsInt);
+          boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
           map.put("result", result);
@@ -105,8 +92,8 @@ public class App
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
-    }
-
+      }
+  
 }
 
 
