@@ -75,29 +75,25 @@ public class App
           sc3.useDelimiter("[;\r\n]+");
           sc4.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
-          while (sc1.hasNext())
+          while (sc1.hasNextInt())
           {
-            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+            int value = sc1.nextInt();
             inputList.add(value);
           }
           System.out.println("inputList" + inputList);
           int[] intArr = new int[50];  
           int a = 0;
           System.out.println("burası");        
-          while (sc2.hasNext())
+          while (sc2.hasNextInt())
           {
-            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+            int value = sc1.nextInt();
             System.out.println("value"+ value);
             intArr[a] = value;
             a++;
           }
           System.out.println("burası2");  
           System.out.println("intArr" + intArr);
-          int inputInteger = -1;
-          while (sc3.hasNext())
-          {
-            inputInteger = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-          }
+          int inputInteger = -sc3.nextInt();
           System.out.println("int" +inputInteger);
           String[] strArr = new String[50];
           a = 0;
