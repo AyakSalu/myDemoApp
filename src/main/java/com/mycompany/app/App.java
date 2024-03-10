@@ -71,6 +71,9 @@ public class App
           java.util.Scanner sc3 = new java.util.Scanner(i3);
           java.util.Scanner sc4 = new java.util.Scanner(i4);
           sc1.useDelimiter("[;\r\n]+");
+          sc2.useDelimiter("[;\r\n]+");
+          sc3.useDelimiter("[;\r\n]+");
+          sc4.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
           while (sc1.hasNext())
           {
