@@ -85,7 +85,7 @@ public class App
           int inputInteger;
           while (sc3.hasNext())
           {
-            inputInteger = sc1.next().replaceAll("\\s","");
+            inputInteger = Integer.parseInt(sc1.next().replaceAll("\\s",""));
           }
           String[] strArr = new String[50];
           a = 0;
