@@ -83,7 +83,10 @@ public class App
           System.out.println("inputList" + inputList);
           int[] intArr = new int[50];  
           int a = 0;
-          System.out.println("burası");        
+          System.out.println("burası");
+          System.out.println("sc2"+sc2.hasNextInt());      
+          System.out.println("sc3"+sc3.hasNextInt());   
+          System.out.println("sc4"+sc4.hasNextInt());   
           while (sc2.hasNextInt())
           {
             int value = sc1.nextInt();
