@@ -65,6 +65,7 @@ public class App
           String i2 = req.queryParams("input2");
           String i3 = req.queryParams("input3");
           String i4 = req.queryParams("input4");
+          System.out.println("stringler"+i1 + "\n"+i2 + "\n"+i3 + "\n"+i4 + "\n");  
           java.util.Scanner sc1 = new java.util.Scanner(i1);
           java.util.Scanner sc2 = new java.util.Scanner(i2);
           java.util.Scanner sc3 = new java.util.Scanner(i3);
