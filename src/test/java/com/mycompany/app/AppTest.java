@@ -43,7 +43,6 @@ public class AppTest
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
       int[] arr = {0,1,3,4};
       int a = 1;
-
       assertEquals(new App().meaningfulOperation(array,arr,a,s),"cdefghijabcdghijcd");
     }
 

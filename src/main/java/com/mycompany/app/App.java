@@ -1,5 +1,7 @@
 package com.mycompany.app;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import static spark.Spark.get;
 import static spark.Spark.port;
 import static spark.Spark.post;
@@ -15,7 +17,8 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App 
 {
     public static String meaningfulOperation(ArrayList<Integer> array,int [] arrInt,int i,String [] strArr){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri index kabul edip ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
-        if(strArr.length < 1) return "";
+      System.out.println("array1= "+array+" array2 = "+Arrays.toString(arrInt)+" int değeri = "+i+" string = "+ Arrays.toString(strArr));  
+      if(strArr.length < 1) return "";
         String cevap = "";
         if(array!= null){
           for(int index : array){
@@ -80,24 +83,20 @@ public class App
             int value = sc1.nextInt();
             inputList.add(value);
           }
-          System.out.println("inputList" + inputList);
+
           int[] intArr = new int[50];  
           int a = 0;
-          System.out.println("burası");
-          System.out.println("sc2"+sc2.hasNextInt());      
-          System.out.println("sc3"+sc3.hasNextInt());   
-          System.out.println("sc4"+sc4.hasNext());   
+  
           while (sc2.hasNextInt())
           {
             int value = sc2.nextInt();
-            System.out.println("value"+ value);
+
             intArr[a] = value;
             a++;
           }
-          System.out.println("burası2");  
-          System.out.println("intArr" + intArr);
+
           int inputInteger = sc3.nextInt();
-          System.out.println("int" +inputInteger);
+
           String[] strArr = new String[50];
           a = 0;
           while (sc4.hasNext())
@@ -105,7 +104,7 @@ public class App
             String value = sc4.next().replaceAll("\\s","");
             strArr[a] = value;
           }
-          System.out.println("str" + strArr);
+
           String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
 
          Map map = new HashMap();
