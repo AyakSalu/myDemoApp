@@ -41,7 +41,7 @@ public class AppTest
     public void testTrueConcatination() {
       String[] s = {"ab", "cd", "ef", "gh", "ij"};
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      int[] arr = {0,1,3,4};
+      Integer[] arr = {0,1,3,4};
       int a = 1;
       assertEquals(new App().meaningfulOperation(array,arr,a,s),"cdefghijabcdghijcd");
     }
@@ -49,7 +49,7 @@ public class AppTest
     public void testOutOfBoundsInt() {
       String[] s = {"ab", "cd", "ef", "gh", "ij"};
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      int[] arr = {0,1,3,4};
+      Integer[] arr = {0,1,3,4};
       int a = 99;
       assertEquals(new App().meaningfulOperation(array,arr,a,s),"cdefghijabcdghij");
     }
@@ -57,7 +57,7 @@ public class AppTest
     public void testNullArray() {
       String[] s = {"ab", "cd", "ef", "gh", "ij"};
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      int[] arr = null;
+      Integer[] arr = null;
       int a = 1;
       assertEquals(new App().meaningfulOperation(array,arr,a,s),"cdefghijcd");
     }
@@ -65,14 +65,14 @@ public class AppTest
     public void testEmptyArrayList() {
       String[] s = {"ab", "cd", "ef", "gh", "ij"};
       ArrayList<Integer> array = new ArrayList<>();
-      int[] arr = {0,1,3,4};
+      Integer[] arr = {0,1,3,4};
       int a = 1;
       assertEquals(new App().meaningfulOperation(array,arr,a,s),"abcdghijcd");
     }
     public void testEmptyStringSet() {
       String[] s = {""};
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      int[] arr = {0,1,3,4};
+      Integer[] arr = {0,1,3,4};
       int a = 1;
       assertEquals(new App().meaningfulOperation(array,arr,a,s),"");
     }

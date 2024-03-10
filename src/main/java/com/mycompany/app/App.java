@@ -16,7 +16,7 @@ import spark.template.mustache.MustacheTemplateEngine;
  */
 public class App 
 {
-    public static String meaningfulOperation(ArrayList<Integer> array,int [] arrInt,int i,String [] strArr){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri index kabul edip ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
+    public static String meaningfulOperation(ArrayList<Integer> array,Integer [] arrInt,int i,String [] strArr){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri index kabul edip ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
       System.out.println("array1= "+array+" array2 = "+Arrays.toString(arrInt)+" int değeri = "+i+" string = "+ Arrays.toString(strArr));  
       if(strArr.length < 1) return "";
         String cevap = "";
@@ -83,28 +83,25 @@ public class App
             int value = sc1.nextInt();
             inputList.add(value);
           }
-
-          int[] intArr = new int[50];  
-          int a = 0;
+          java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>(); 
   
           while (sc2.hasNextInt())
           {
             int value = sc2.nextInt();
-
-            intArr[a] = value;
-            a++;
+            inputList2.add(value);
           }
-
+          Integer[] intArr = new Integer[inputList2.size()];
+          intArr = inputList2.toArray(intArr);
           int inputInteger = sc3.nextInt();
-
-          String[] strArr = new String[50];
-          a = 0;
+          java.util.ArrayList<String> strArrList = new java.util.ArrayList<>();
+          
           while (sc4.hasNext())
           {
             String value = sc4.next().replaceAll("\\s","");
-            strArr[a] = value;
+            strArrList.add(value);
           }
-
+          String[] strArr = new String[strArrList.size()];
+          strArr = inputList2.toArray(strArr);
           String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
 
          Map map = new HashMap();
