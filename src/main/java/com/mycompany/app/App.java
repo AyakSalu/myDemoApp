@@ -78,7 +78,8 @@ public class App
           }
           System.out.println("inputList" + inputList);
           int[] intArr = new int[50];  
-          int a = 0;        
+          int a = 0;
+          System.out.println("burası");        
           while (sc2.hasNext())
           {
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
@@ -86,13 +87,14 @@ public class App
             intArr[a] = value;
             a++;
           }
-          System.out.println(intArr);
+          System.out.println("burası2");  
+          System.out.println("intArr" + intArr);
           int inputInteger = -1;
           while (sc3.hasNext())
           {
             inputInteger = Integer.parseInt(sc1.next().replaceAll("\\s",""));
           }
-          System.out.println(inputInteger);
+          System.out.println("int" +inputInteger);
           String[] strArr = new String[50];
           a = 0;
           while (sc4.hasNext())
@@ -100,7 +102,7 @@ public class App
             String value = sc1.next().replaceAll("\\s","");
             strArr[a] = value;
           }
-          System.out.println(strArr);
+          System.out.println("str" + strArr);
           String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
 
          Map map = new HashMap();
