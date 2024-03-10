@@ -14,7 +14,7 @@ import spark.template.mustache.MustacheTemplateEngine;
  */
 public class App 
 {
-    public static String meaningfulOperation(ArrayList<Integer> array,Integer [] arrInt,String [] strArr,int i){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
+    public static String meaningfulOperation(ArrayList<Integer> array,Integer [] arrInt,int i,String [] strArr){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri index kabul edip ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
         String cevap = "";
         for(int index : array){
           if(index >= strArr.length) continue;
@@ -48,7 +48,7 @@ public class App
       public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World lol");
+        get("/", (req, res) -> "Hello, World");
 
         post("/compute", (req, res) -> {
             System.out.println(req.queryParams("input1"));
@@ -56,20 +56,33 @@ public class App
 
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
-          sc1.useDelimiter("[;\r\n]+");
+          //sc1.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
-          while (sc1.hasNext())
+          String line = sc1.nextLine();
+          Scanner lineScan = new Scanner(line);
+          while (lineScan.hasNext())
           {
-            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+            int value = Integer.parseInt(lineScan.next().replaceAll("\\s",""));
             inputList.add(value);
           }
+          line = sc1.nextLine();
+          lineScan = new Scanner(line);
+          int[] input2Arr = new int[line.length];
+          while (lineScan.hasNext())
+          {
+            int value = Integer.parseInt(lineScan.next().replaceAll("\\s",""));
+            input2Arr[a] = value;
+          }
+          line = sc1.nextLine();
+          lineScan = new Scanner(line);
+          int input3 = Integer.parseInt(lineScan.replaceAll("\\s",""))
           System.out.println(inputList);
 
 
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.search(inputList, input2AsInt);
+          boolean result = App.meaningfulOperation(inputList, input2AsInt);
 
          Map map = new HashMap();
           map.put("result", result);
