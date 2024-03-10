@@ -14,21 +14,26 @@ import spark.template.mustache.MustacheTemplateEngine;
  */
 public class App 
 {
-    public static String meaningfulOperation(ArrayList<Integer> array,Integer [] arrInt,int i,String [] strArr){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri index kabul edip ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
+    public static String meaningfulOperation(ArrayList<Integer> array,int [] arrInt,int i,String [] strArr){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri index kabul edip ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
+        if(strArr.length < 1) return "";
         String cevap = "";
-        for(int index : array){
-          if(index >= strArr.length) continue;
-          else{
-            cevap += strArr[index];
+        if(array!= null){
+          for(int index : array){
+            if(index >= strArr.length && index >= 0) continue;
+            else{
+              cevap += strArr[index];
+            }
           }
         }
-        for(int index : arrInt){
-          if(index >= strArr.length) continue;
-          else{
-            cevap += strArr[index];
+        if(arrInt != null){
+          for(int index : arrInt){
+            if(index >= strArr.length && index >= 0) continue;
+            else{
+              cevap += strArr[index];
+            }
           }
         }
-        if(!(i >= strArr.length)) cevap += strArr[i];
+        if(i < strArr.length && i >= 0) cevap += strArr[i];
 
         return cevap;
     }
