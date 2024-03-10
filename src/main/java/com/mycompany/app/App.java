@@ -82,6 +82,7 @@ public class App
           while (sc2.hasNext())
           {
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+            System.out.println(value);
             intArr[a] = value;
             a++;
           }
