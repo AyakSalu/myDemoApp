@@ -82,7 +82,7 @@ public class App
             intArr[a] = value;
             a++;
           }
-          int input3;
+          int inputInteger;
           while (sc3.hasNext())
           {
             input3 = sc1.next().replaceAll("\\s","");
@@ -95,11 +95,7 @@ public class App
             strArr[a] = value;
           }
 
-
-          String input2 = req.queryParams("input2").replaceAll("\\s","");
-          int input2AsInt = Integer.parseInt(input2);
-
-          String result = App.meaningfulOperation(inputList, input2AsInt);
+          String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
 
          Map map = new HashMap();
           map.put("result", result);
