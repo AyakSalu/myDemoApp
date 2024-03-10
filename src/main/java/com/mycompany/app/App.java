@@ -117,7 +117,7 @@ public class App
         get("/compute",
             (rq, rs) -> {
               Map map = new HashMap();
-              map.put("result", "henüz hesaplanmadı!");
+              map.put("result", "henüz hesaplanmadı");
               return new ModelAndView(map, "compute.mustache");
             },
             new MustacheTemplateEngine());
