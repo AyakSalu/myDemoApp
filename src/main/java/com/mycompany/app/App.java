@@ -101,7 +101,7 @@ public class App
             strArrList.add(value);
           }
           String[] strArr = new String[strArrList.size()];
-          strArr = inputList2.toArray(strArr);
+          strArr = strArrList.toArray(strArr);
           String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
 
          Map map = new HashMap();
