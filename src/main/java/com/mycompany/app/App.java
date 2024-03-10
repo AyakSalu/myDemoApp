@@ -56,10 +56,10 @@ public class App
         get("/", (req, res) -> "Hello, World");
 
         post("/compute", (req, res) -> {
-          System.out.println(req.queryParams("input1"));
-          System.out.println(req.queryParams("input2"));
-          System.out.println(req.queryParams("input3"));
-          System.out.println(req.queryParams("input4"));
+          System.out.println("input1: "+req.queryParams("input1"));
+          System.out.println("input2: "+req.queryParams("input2"));
+          System.out.println("input3: "+req.queryParams("input3"));
+          System.out.println("input4: "+req.queryParams("input4"));
 
           String i1 = req.queryParams("input1");
           String i2 = req.queryParams("input2");
@@ -76,13 +76,13 @@ public class App
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
             inputList.add(value);
           }
-          System.out.println(inputList);
+          System.out.println("inputList" + inputList);
           int[] intArr = new int[50];  
           int a = 0;        
           while (sc2.hasNext())
           {
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-            System.out.println(value);
+            System.out.println("value"+ value);
             intArr[a] = value;
             a++;
           }
