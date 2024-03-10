@@ -75,7 +75,7 @@ public class App
           }
           line = sc1.nextLine();
           lineScan = new Scanner(line);
-          int input3 = Integer.parseInt(lineScan.replaceAll("\\s",""))
+          int input3 = Integer.parseInt(lineScan.replaceAll("\\s",""));
           System.out.println(inputList);
 
 
