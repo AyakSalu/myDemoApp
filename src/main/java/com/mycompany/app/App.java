@@ -14,7 +14,25 @@ import spark.template.mustache.MustacheTemplateEngine;
  */
 public class App 
 {
+    public static String meaningfulOperation(ArrayList<Integer> array,Integer [] arrInt,String [] strArr,int i){ // set of stringten arraylistte bulunan intleri index kabul edip o stringleri alıp concatanate eder sonra normal arraydekileri ekler en sonda tekli verilen indexteki elemanıda ekleyip dönürür
+        String cevap = "";
+        for(int index : array){
+          if(index >= strArr.length) continue;
+          else{
+            cevap += strArr[index];
+          }
+        }
+        for(int index : arrInt){
+          if(index >= strArr.length) continue;
+          else{
+            cevap += strArr[index];
+          }
+        }
+        if(!(i >= strArr.length)) cevap += strArr[i];
 
+        return cevap;
+    }
+    
     public static boolean search(ArrayList<Integer> array, int e) {
         System.out.println("inside search");
         if (array == null) return false;
@@ -24,14 +42,17 @@ public class App
         }
         return false;
       }
+
+
+
       public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
         get("/", (req, res) -> "Hello, World");
 
         post("/compute", (req, res) -> {
-          //System.out.println(req.queryParams("input1"));
-          //System.out.println(req.queryParams("input2"));
+            System.out.println(req.queryParams("input1"));
+            System.out.println(req.queryParams("input2"));
 
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
