@@ -84,15 +84,18 @@ public class App
             inputList.add(value);
           }
           java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>(); 
-  
+          System.out.println("bura2");
           while (sc2.hasNextInt())
           {
             int value = sc2.nextInt();
             inputList2.add(value);
           }
+          System.out.println("bura2.5");
           Integer[] intArr = new Integer[inputList2.size()];
           intArr = inputList2.toArray(intArr);
+
           int inputInteger = sc3.nextInt();
+          System.out.println("bura3");
           java.util.ArrayList<String> strArrList = new java.util.ArrayList<>();
           
           while (sc4.hasNext())
@@ -100,10 +103,11 @@ public class App
             String value = sc4.next().replaceAll("\\s","");
             strArrList.add(value);
           }
+          System.out.println("bura3");
           String[] strArr = new String[strArrList.size()];
           strArr = strArrList.toArray(strArr);
           String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
-
+          System.out.println("bura5");
          Map map = new HashMap();
           map.put("result", result);
           return new ModelAndView(map, "compute.mustache");
