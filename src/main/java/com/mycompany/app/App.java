@@ -76,6 +76,7 @@ public class App
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
             inputList.add(value);
           }
+          System.out.println(inputList);
           int[] intArr = new int[50];  
           int a = 0;        
           while (sc2.hasNext())
@@ -84,11 +85,13 @@ public class App
             intArr[a] = value;
             a++;
           }
+          System.out.println(intArr);
           int inputInteger = -1;
           while (sc3.hasNext())
           {
             inputInteger = Integer.parseInt(sc1.next().replaceAll("\\s",""));
           }
+          System.out.println(inputInteger);
           String[] strArr = new String[50];
           a = 0;
           while (sc4.hasNext())
@@ -96,7 +99,7 @@ public class App
             String value = sc1.next().replaceAll("\\s","");
             strArr[a] = value;
           }
-
+          System.out.println(strArr);
           String result = App.meaningfulOperation(inputList,intArr,inputInteger,strArr);
 
          Map map = new HashMap();
