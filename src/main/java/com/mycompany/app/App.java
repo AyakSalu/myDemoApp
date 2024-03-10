@@ -86,23 +86,23 @@ public class App
           System.out.println("burası");
           System.out.println("sc2"+sc2.hasNextInt());      
           System.out.println("sc3"+sc3.hasNextInt());   
-          System.out.println("sc4"+sc4.hasNextInt());   
+          System.out.println("sc4"+sc4.hasNext());   
           while (sc2.hasNextInt())
           {
-            int value = sc1.nextInt();
+            int value = sc2.nextInt();
             System.out.println("value"+ value);
             intArr[a] = value;
             a++;
           }
           System.out.println("burası2");  
           System.out.println("intArr" + intArr);
-          int inputInteger = -sc3.nextInt();
+          int inputInteger = sc3.nextInt();
           System.out.println("int" +inputInteger);
           String[] strArr = new String[50];
           a = 0;
           while (sc4.hasNext())
           {
-            String value = sc1.next().replaceAll("\\s","");
+            String value = sc4.next().replaceAll("\\s","");
             strArr[a] = value;
           }
           System.out.println("str" + strArr);
