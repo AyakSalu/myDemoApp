@@ -56,8 +56,10 @@ public class App
         get("/", (req, res) -> "Hello, World");
 
         post("/compute", (req, res) -> {
-          //System.out.println(req.queryParams("input1"));
-          //System.out.println(req.queryParams("input2"));
+          System.out.println(req.queryParams("input1"));
+          System.out.println(req.queryParams("input2"));
+          System.out.println(req.queryParams("input3"));
+          System.out.println(req.queryParams("input4"));
 
           String i1 = req.queryParams("input1");
           String i2 = req.queryParams("input2");
