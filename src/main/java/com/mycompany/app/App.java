@@ -82,7 +82,7 @@ public class App
             intArr[a] = value;
             a++;
           }
-          int inputInteger;
+          int inputInteger = -1;
           while (sc3.hasNext())
           {
             inputInteger = Integer.parseInt(sc1.next().replaceAll("\\s",""));
